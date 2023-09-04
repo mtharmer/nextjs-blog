@@ -4,6 +4,7 @@ import Layout, { siteTitle } from '../components/layout';
 import utilStyles from '../styles/utils.module.css';
 import { getSortedPostsData } from '../lib/posts';
 import Date from '../components/date';
+import { useUser } from '@auth0/nextjs-auth0/client';
 
 export default function Home({ allPosts }) {
   return (
@@ -13,10 +14,7 @@ export default function Home({ allPosts }) {
       </Head>
       <section className={utilStyles.headingMd}>
         <p>Welcome to my site!</p>
-        <p>
-          (This is a sample website - you’ll be building a site like this on{' '}
-          <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
-        </p>
+        <Link href="/api/auth/login">Login Here</Link>
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
